@@ -1,4 +1,4 @@
-package obrasDeArte;
+package Clases;
 
 public class Escultura extends ObraDeArte{
 	
@@ -6,8 +6,8 @@ public class Escultura extends ObraDeArte{
 	private String autor;
 	private String material;
 	
-	public Escultura(String nombre, String formato, Ciudad ciudadPerteneciente, int anoRealizacion, String autor, String material) {
-		super(nombre, formato, ciudadPerteneciente, anoRealizacion);
+	public Escultura(String nombre, Ciudad ciudadPerteneciente, int anoRealizacion, String autor, String material) {
+		super(nombre, ciudadPerteneciente, anoRealizacion);
 		this.autor = autor;
 		this.material = material;
 	}
@@ -36,12 +36,7 @@ public class Escultura extends ObraDeArte{
 
 	@Override
 	public String toString() {
-		return "Escultura [" + super.toString() + "autor=" + autor + ", material=" + material + "]";
-	}
-	
-	@Override
-	public int compareTo(ObraDeArte o) {
-		return 0;
+		return "Escultura [ " + super.toString() + "autor = " + autor + ", material = " + material + " ]";
 	}
 
 }

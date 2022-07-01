@@ -1,4 +1,4 @@
-package obrasDeArte;
+package Excepciones;
 
 public class CityAlreadyExistsException extends Exception {
 	

@@ -1,4 +1,4 @@
-package obrasDeArte;
+package Clases;
 
 public enum Tipo {
 	

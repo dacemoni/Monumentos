@@ -1,4 +1,4 @@
-package obrasDeArte;
+package Clases;
 
 public class Ciudad implements Comparable<Ciudad>{
 	   private String nombre;

@@ -1,18 +1,16 @@
-package obrasDeArte;
+package Clases;
 
 import java.util.Objects;
 
-public abstract class ObraDeArte implements Comparable<ObraDeArte> {
+public abstract class ObraDeArte implements Comparable<ObraDeArte>{
 
 	private String nombre;
-	private String formato;
 	private Ciudad ciudadPerteneciente;
 	private int anoRealizacion;
 
-	protected ObraDeArte(String nombre, String formato, Ciudad ciudadPerteneciente, int anoRealizacion) {
+	protected ObraDeArte(String nombre, Ciudad ciudadPerteneciente, int anoRealizacion) {
 		super();
 		this.nombre = nombre;
-		this.formato = formato;
 		this.ciudadPerteneciente = ciudadPerteneciente;
 		this.anoRealizacion = anoRealizacion;
 	}
@@ -23,6 +21,14 @@ public abstract class ObraDeArte implements Comparable<ObraDeArte> {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public Ciudad getCiudadPerteneciente() {
+		return ciudadPerteneciente;
+	}
+
+	public void setCiudadPerteneciente(Ciudad ciudadPerteneciente) {
+		this.ciudadPerteneciente = ciudadPerteneciente;
 	}
 
 	public int getAnoRealizacion() {
@@ -37,19 +43,18 @@ public abstract class ObraDeArte implements Comparable<ObraDeArte> {
 
 	@Override
 	public String toString() {
-		return "ObraDeArte [nombre=" + nombre + ", ciudadPerteneciente=" + ciudadPerteneciente + ", anoRealizacion="
+		return "ObraDeArte [nombre = " + nombre + ", ciudadPerteneciente = " + ciudadPerteneciente + ", anoRealizacion = "
 				+ anoRealizacion + "]";
 	}
 
-	@Override
-	   public int compareTo(ObraDeArte o){
-	      if (ciudadPerteneciente == o.ciudadPerteneciente){
-	         return nombre.compareTo(o.getNombre());
-	      }
-	      else{
-	         return Integer.compare(o.getAnoRealizacion(), anoRealizacion);
-	      }
-	   }
+	public int compareTo (ObraDeArte o){
+		if (ciudadPerteneciente == o.ciudadPerteneciente){
+			return nombre.compareTo(o.getNombre());
+		}
+		else{
+			return Integer.compare(o.getAnoRealizacion(), anoRealizacion);
+		}
+	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -64,20 +69,4 @@ public abstract class ObraDeArte implements Comparable<ObraDeArte> {
 				&& Objects.equals(nombre, other.nombre);
 	}
 
-	public String getFormato() {
-		return formato;
-	}
-
-	public void setFormato(String formato) {
-		this.formato = formato;
-	}
-
-	public Ciudad getCiudadPerteneciente() {
-		return ciudadPerteneciente;
-	}
-
-	public void setCiudadPerteneciente(Ciudad ciudadPerteneciente) {
-		this.ciudadPerteneciente = ciudadPerteneciente;
-	}
-	
 }

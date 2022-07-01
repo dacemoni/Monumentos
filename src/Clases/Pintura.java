@@ -1,4 +1,4 @@
-package obrasDeArte;
+package Clases;
 
 public class Pintura extends ObraDeArte{
 
@@ -6,8 +6,8 @@ public class Pintura extends ObraDeArte{
 	private String autor;
 	private Tecnica tecnica;
 
-	public Pintura(String nombre, String formato, Ciudad ciudadPerteneciente, int anoRealizacion, String autor, Tecnica tecnica) {
-		super(nombre, formato, ciudadPerteneciente, anoRealizacion);
+	public Pintura(String nombre, Ciudad ciudadPerteneciente, int anoRealizacion, String autor, Tecnica tecnica) {
+		super(nombre, ciudadPerteneciente, anoRealizacion);
 		this.autor = autor;
 		this.tecnica = tecnica;
 	}
@@ -35,13 +35,9 @@ public class Pintura extends ObraDeArte{
 
 	@Override
 	public String toString() {
-		return "Pintura [" + super.toString() + "autor=" + autor + ", tecnica=" + tecnica + "]";
+		return "Pintura [ " + super.toString() + "autor = " + autor + ", tecnica = " + tecnica + " ]";
 	}
-	
-	@Override
-	public int compareTo(ObraDeArte o) {
-		return 0;
-	}
+
 }
 
 

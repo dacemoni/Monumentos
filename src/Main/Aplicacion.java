@@ -1,7 +1,14 @@
-package obrasDeArte;
+package Main;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import Excepciones.CityAlreadyExistsException;
+import Excepciones.CityNotFoundException;
+import Excepciones.ObraAlreadyExistsException;
+import Excepciones.ObraNotFoundException;
+import Gestor.GestorObrasDeArte;
+import Gestor.GestorObrasDeArteImpl;
 
 public class Aplicacion {
 
@@ -39,7 +46,7 @@ public class Aplicacion {
 					try {
 						obrasDeArte.nuevaObraDeArte(teclado);
 					} 
-					catch (ObraAlreadyExistsException e2) {
+					catch (ObraAlreadyExistsException | CityNotFoundException e2) {
 						System.out.println(e2.getMessage());
 					}
 					break;
@@ -52,43 +59,29 @@ public class Aplicacion {
 					}
 					break;
 				case 4:
+					
 					try {
-						obrasDeArte.buscarObrasDeArte(teclado);
+					obrasDeArte.buscarObrasDeArte(teclado);
 					} 
 					catch (ObraNotFoundException e) {
 						System.out.println(e.getMessage());
 					}
+					
 					break;
 				case 5:
-					try {
-						ciudades.borrarCiudad(teclado);
-					} 
-					catch (CityNotFoundException e) {
-						System.out.println(e.getMessage());
-					}
-					break;
-				case 6:
-					try {
-						obrasDeArte.borrarObraDeArte(teclado);
-					} 
-					catch (ObraNotFoundException e) {
-						System.out.println(e.getMessage());
-					}
-					break;
-				case 7:
 					ciudades.listarCiudades();
 					break;
-				case 8:
+				case 6:
 					ciudades.listarObrasDeArte();
 					break;
-				case 9:
+				case 7:
 					System.out.println("Gracias.");
 					break;
 
 				default:
 					System.out.println("No existe esta opcion.");
 				}
-			} while (opcion != 9);
+			} while (opcion != 7);
 		}
 	}
 
@@ -99,12 +92,9 @@ public class Aplicacion {
 		System.out.println("2. Añadir obra de arte");
 		System.out.println("3. Buscar ciudad");
 		System.out.println("4. Buscar obra de arte");
-		System.out.println("5. Borrar ciudad");
-		System.out.println("6. Borrar obra de arte");
-		System.out.println("7. Listar ciudades");
-		System.out.println("8. Listar obras de arte");
-		System.out.println("9. Terminar y salir");
-		System.out.println("");
+		System.out.println("5. Listar ciudades");
+		System.out.println("6. Listar obras de arte");
+		System.out.println("7. Terminar y salir");
 	}
 
 }
